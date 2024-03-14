@@ -12,4 +12,4 @@ def push_testing_to_staging(src_branch, dest_branch):
 
 if __name__ == "__main__":
     # Replace 'testing', 'staging' with your branch names
-    push_testing_to_staging('testing', 'staging')
+    push_testing_to_staging('testing', 'dev')
