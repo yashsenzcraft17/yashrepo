@@ -1,0 +1,130 @@
+@import "styles/variables.scss";
+
+.leadCard {
+  border-radius: 12px;
+  border: 1px solid $color-white-15;
+  background: #fff;
+  padding: 24px 24px 44px;
+
+  &Heading {
+    @include d-flex(space-between);
+    align-items: flex-start;
+    // padding-bottom: 16px;
+
+    &Data {
+      @include d-flex();
+      gap: 6px;
+
+      &Img {
+        width: 24px;
+        height: 24px;
+      }
+
+      &HeaderText {
+        color: $color-black-4;
+        @include font-semi-bold(2rem);
+        line-height: 140%;
+        @include d-flex(space-between);
+        gap: 12px;
+
+        span {
+          color: $color-black-10;
+          @include font-semi-bold($fs: 1.2rem);
+          line-height: 120%;
+          padding: 4px 8px;
+          background-color: $color-white-6;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    &Status {
+      border-radius: 4px;
+      background: $color-yellow-2;
+      padding: 4px 6px;
+      @include d-flex();
+      gap: 6px;
+      min-height: 24px;
+
+      &Circle {
+        width: 8px;
+        height: 8px;
+      }
+
+      h6 {
+        color: $color-yellow-1;
+        @include font-reg(1.2rem);
+        line-height: 130%;
+      }
+    }
+  }
+
+  &Form {
+    margin-top: 16px;
+  }
+
+  &Arrows {
+    @include d-flex();
+    gap: 12px;
+
+    &StatusMsg {
+      display: none;
+    }
+  }
+
+  &Accordion {
+    display: none;
+  }
+
+  // responsive
+  @media (max-width: 768px) {
+    padding: 16px 16px 32px;
+    width: 100%;
+    border-radius: 12px;
+
+    &Arrows {
+      &StatusMsg {
+        display: block;
+      }
+    }
+
+    &Accordion {
+      display: block;
+    }
+
+    &Heading {
+      @include d-flex(space-between);
+      align-items: flex-start;
+      // padding-bottom: 16px;
+
+      &Data {
+        @include d-flex();
+        gap: 6px;
+
+        &Img {
+          width: 20px;
+          height: 20px;
+        }
+
+        &HeaderText {
+          @include font-semi-bold(1.6rem);
+        }
+      }
+    }
+
+    &Status {
+      border-radius: 4px;
+      background: $color-yellow-2;
+      padding: 4px 6px;
+      @include d-flex();
+      gap: 6px;
+      min-height: 24px;
+
+      h6 {
+        color: $color-yellow-1;
+        @include font-reg(1.2rem);
+        line-height: 130%;
+      }
+    }
+  }
+}

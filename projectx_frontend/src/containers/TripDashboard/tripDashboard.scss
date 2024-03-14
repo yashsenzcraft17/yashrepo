@@ -1,0 +1,112 @@
+@import "styles/variables.scss";
+
+.tripDashboard {
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  background-color: $color-white-6;
+  &Container {
+    padding: 7px 0 21px;
+    @include d-flex($jc: space-between);
+    position: relative;
+    h2 {
+      line-height: 140%;
+      @include font-semi-bold($fs: 2rem);
+      color: $color-black-4;
+    }
+  }
+
+  &Card {
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    // flex-wrap: wrap;
+    margin: 21px 0 0 0;
+    // max-width: 1190px;
+
+    .statusCard {
+      // min-width: 276px;
+      flex-basis: 23.9%;
+
+      @media (max-width: 768px) {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  .lineChartContainer {
+    margin-bottom: 16px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .dashboardRouteTable {
+    display: flex;
+    // flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+// media query
+@media (max-width: 768px) {
+  .tripDashboard {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .tripDashboard {
+    padding: 24px 16px;
+    .dashboardRouteTable {
+      flex-direction: column;
+    }
+    &Card {
+      flex-direction: column;
+    }
+    &TableRoute {
+      width: 100%;
+      max-width: 100% !important;
+      .loadChart {
+        width: 100%;
+        max-width: 100%;
+      }
+      .reeferChart {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .tripDashboard {
+    .tripDashboardTableRoute {
+      // max-width: 500px;
+    }
+    &Table {
+      // max-width: 500px;
+    }
+  }
+}
+
+@media (max-width: 1260px) {
+  .tripDashboard {
+    .tripDashboardTableRoute {
+      // max-width: 420px;
+    }
+    &Table {
+      // max-width: 450px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* Add your responsive styles here */
+  table {
+    width: 100%;
+    /* Add other styles as needed */
+  }
+}

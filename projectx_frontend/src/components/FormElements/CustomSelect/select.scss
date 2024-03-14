@@ -1,0 +1,106 @@
+@import "styles/variables.scss";
+
+.selectInput {
+  @include d-flex();
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  gap: 4px;
+
+  &Label {
+    color: $color-grey-8;
+    @include font-reg(1.4rem);
+    line-height: 135%;
+  }
+
+  &Dropdown {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url(../../../assets/images/LeadDetails/bottom.svg);
+      right: 12px;
+      width: 18px;
+      height: 18px;
+      top: calc(50% - 9px);
+      pointer-events: none;
+    }
+  }
+
+  &Data {
+    -webkit-appearance: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #fff;
+    // color: $color-black-4;
+    // color: $color-grey-11;
+    @include font-reg(1.6rem);
+    line-height: 140%;
+
+    &:focus {
+      border-radius: 4px;
+      outline: 1px solid $color-blue-0;
+      border: 1px solid $color-blue-0;
+      background: var(--Neutral-N0, #fff);
+    }
+
+    &::placeholder {
+      color: $color-grey-11;
+      @include font-reg(1.6rem);
+      line-height: 140%;
+    }
+
+    /* Change the white to any color */
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px $color-white-0 inset !important;
+    }
+  }
+}
+
+.css-olqui2-singleValue {
+  color: #171b1c !important;
+}
+
+.css-qbdosj-Input {
+  padding-bottom: 8px !important;
+  padding-top: 8px !important;
+}
+
+.css-1xc3v61-indicatorContainer {
+  cursor: pointer;
+}
+
+.css-1jqq78o-placeholder {
+  color: $color-grey-11 !important;
+  @include font-reg(1.6rem !important);
+  line-height: 140%;
+}
+
+.css-wwsmdl-control {
+  border-radius: 4px !important;
+  background-color: #fff !important;
+}
+
+.css-c2m0d9-control {
+  min-height: 44px !important;
+}
+
+.css-17tmsyp-control {
+  border-color: none !important;
+  border: 1px solid var(--Stroke-Stroke-2, #f0f0f0 !important);
+}
+
+.css-15adg5y-control {
+  min-height: 44px !important;
+}
+
+.css-16bql3p-control {
+  min-height: 44px !important;
+}

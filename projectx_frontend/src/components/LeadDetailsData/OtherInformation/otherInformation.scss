@@ -1,0 +1,80 @@
+@import "styles/variables.scss";
+
+.otherInfo {
+  border-top: 1px solid $color-white-11;
+  padding-top: 24px;
+
+  &Fields {
+    @include d-flex();
+    flex-wrap: wrap;
+    row-gap: 44px;
+    padding: 44px 0;
+    column-gap: 16px;
+
+    > div {
+      width: calc(32.9% - 8px);
+    }
+  }
+
+  > div {
+    width: calc(32.5% - 8px);
+  }
+
+  &Asterisk {
+    color: $color-red-3;
+    padding-left: 2px;
+  }
+
+  &Text {
+    color: $color-grey-4;
+    @include font-reg(1.4rem);
+    line-height: 135%;
+
+    &Area {
+      border-radius: 2px;
+      border: 1px solid $color-white-13;
+      background: #fff;
+      width: 100%;
+      resize: none;
+      padding: 12px;
+      min-height: 83px;
+
+      &::placeholder {
+        color: $color-grey-11;
+        @include font-reg(1.6rem);
+        line-height: 140%;
+      }
+
+      &:focus {
+        border-radius: 4px;
+        outline: 1px solid $color-blue-0;
+        border: 1px solid $color-blue-0;
+        background: var(--Neutral-N0, #fff);
+      }
+    }
+  }
+
+  // responsive
+  @media (max-width: 768px) {
+    padding-top: 16px;
+    row-gap: 16px;
+
+    > div {
+      width: 100%;
+    }
+
+    &Fields {
+      flex-direction: column;
+      padding: 32px 0;
+
+      > div {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.requiredField {
+  color: red;
+  font-weight: bold;
+}

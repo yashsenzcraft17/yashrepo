@@ -1,0 +1,84 @@
+@import "styles/variables.scss";
+
+.tripDashboardMobile {
+  padding: 24px 24px 12px 24px;
+  background-color: #fff;
+  max-width: 570px;
+  border-radius: 12px;
+  width: 100%;
+
+  &Data {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &Cost {
+      border-radius: 4px;
+      border: 1px solid $color-white-13;
+      background: #fff;
+      padding: 16px;
+    }
+  }
+
+  &Responsive {
+    @include d-flex(space-between);
+    margin-bottom: 16px;
+  }
+
+  &Content {
+    @include d-flex();
+    gap: 3px;
+
+    h5 {
+      color: $color-grey-4;
+      @include font-reg(1.2rem);
+      line-height: 130%;
+    }
+
+    &Code {
+      @include font-semi-bold(1.4rem);
+      color: #444;
+      line-height: 130%;
+    }
+    &Dollar {
+      @include font-semi-bold(1.4rem);
+      color: $color-green-0;
+      line-height: 130%;
+    }
+  }
+
+  &Distance {
+    @include d-flex(center);
+    position: relative;
+  }
+
+  &Kilometer {
+    position: absolute;
+    right: revert-layer;
+    border-radius: 2px;
+    background: $color-white-12;
+    padding: 6px 8px;
+  }
+
+  &Country {
+    color: $color-black-4;
+    @include font-reg(1.4rem);
+    text-transform: capitalize;
+  }
+
+  &Text {
+    @include d-flex(space-between);
+  }
+
+  .negativeProfit {
+    color: $color-red-0;
+    @include font-semi-bold(1.4rem);
+    line-height: 130%;
+  }
+
+  @media (max-width: 768px) {
+    max-width: none;
+    border-radius: 4px;
+    padding: 16px;
+  }
+}

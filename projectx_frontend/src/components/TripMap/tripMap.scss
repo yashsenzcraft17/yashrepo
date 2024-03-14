@@ -1,0 +1,172 @@
+@import "styles/variables.scss";
+
+.mapTooltipHead {
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(235, 235, 235, 0.3);
+  @include d-flex();
+  gap: 12px;
+
+  &Text {
+    h3 {
+      color: $color-white-0;
+      @include font-semi-bold(1.2rem);
+      line-height: 120%;
+      margin-bottom: 4px;
+    }
+    p {
+      color: var(--Text-Grey-4, #8b98a4);
+      @include font-reg(1rem);
+      letter-spacing: 0.2px;
+    }
+  }
+}
+
+.mapTooltipBody {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  &Text {
+    flex-basis: 50%;
+
+    h4 {
+      color: var(--Text-Grey-4, #8b98a4);
+      @include font-reg(1.2rem);
+      line-height: 130%;
+      margin-bottom: 4px;
+    }
+
+    p {
+      color: var(--Background-White, #fff);
+      font-family: Open Sans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 650;
+      line-height: normal;
+    }
+  }
+}
+.gm-style-iw .gm-style-iw-c {
+  max-width: 0;
+}
+
+// defaultToolTip
+.poi-info-window div,
+.poi-info-window a {
+  background-color: #171b1c !important;
+  width: 236px !important;
+  border-radius: 4px;
+}
+
+.poi-info-window .title {
+  margin-bottom: 4px !important;
+  color: $color-white-0 !important;
+  @include font-semi-bold(1.2rem !important);
+  line-height: 120% !important;
+}
+
+.poi-info-window .full-width {
+  color: var(--Text-Grey-4, #8b98a4);
+  @include font-reg(1rem);
+  line-height: 12px;
+  letter-spacing: 0.2px;
+}
+
+.gm-style .gm-style-iw-d::-webkit-scrollbar-track,
+.gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece,
+.gm-style .gm-style-iw-c,
+.gm-style .gm-style-iw-t::after {
+  width: 236px !important;
+  border-radius: 4px;
+  background: #171b1c !important;
+}
+
+.gm-style .gm-style-iw {
+  font-weight: 300;
+  font-size: 13px;
+  // max-width: 236px !important;
+}
+
+.gm-ui-hover-effect {
+  top: -7px !important;
+  right: -7px !important;
+  width: 33px !important;
+  height: 33px !important;
+}
+
+.gm-style .gm-style-iw-tc::after {
+  background: #171b1c;
+}
+
+@media (max-width: 768px) {
+  .gm-style .gm-style-iw-d::-webkit-scrollbar-track,
+  .gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece,
+  .gm-style .gm-style-iw-c,
+  .gm-style .gm-style-iw-t::after {
+    max-width: 236px !important;
+  }
+
+  .mapTooltipHead {
+    padding-bottom: 8px !important;
+    gap: 8px !important;
+
+    &Text {
+      h4 {
+        line-height: 120%;
+      }
+
+      p {
+        color: var(--Background-Grey, #ecf3f5) !important;
+        @include font-reg(1.2rem !important);
+        opacity: 0.7 !important;
+      }
+    }
+  }
+
+  .mapTooltipBody {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+
+    &Text {
+      p {
+        color: var(--Background-White, #fff);
+        font-family: Open Sans;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 650;
+        line-height: normal;
+      }
+    }
+  }
+  .gm-style-iw .gm-style-iw-c {
+    max-width: 0;
+  }
+
+  .gm-style .gm-style-iw-d::-webkit-scrollbar-track,
+  .gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece,
+  .gm-style .gm-style-iw-c,
+  .gm-style .gm-style-iw-t::after {
+    // width: 200px !important;
+    border-radius: 4px;
+    background: #171b1c !important;
+  }
+  .gm-style .gm-style-iw {
+    font-weight: 300;
+    font-size: 13px;
+    // max-width: 236px !important;
+  }
+
+  .gm-ui-hover-effect {
+    top: -7px !important;
+    right: -7px !important;
+    width: 33px !important;
+    height: 33px !important;
+  }
+
+  .gm-style .gm-style-iw-tc::after {
+    background: #171b1c;
+  }
+}

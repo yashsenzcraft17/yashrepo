@@ -1,0 +1,136 @@
+@import "styles/variables.scss";
+
+.module {
+  &Title {
+    @include d-flex($jc: space-between);
+    gap: 12px;
+    padding: 72px 0 32px;
+    h3 {
+      color: $color-grey-4;
+      @include font-semi-bold($fs: 1.8rem);
+      line-height: 130%;
+      //   flex-basis: 10%;
+    }
+    label {
+      height: 1px;
+      background-color: $color-grey-8;
+      flex-grow: 1;
+      //   flex-basis: 88%;
+    }
+    span {
+      //   flex-basis: 2%;
+      img {
+        min-width: 16px;
+        min-height: 16px;
+        display: flex;
+      }
+    }
+  }
+  &TitleActive {
+    cursor: pointer;
+  }
+
+  &Data {
+    @include d-flex($jc: space-between);
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+
+    &Cards {
+      // width: 100%;
+      flex-basis: 49%;
+      @include d-flex($jc: flex-start);
+      flex-wrap: wrap;
+      gap: 14px;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 1150px) {
+    &Data {
+      flex-direction: column;
+      // height: auto !important;
+      &Cards {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      &ChartFilter {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        span {
+          flex-basis: 48%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .statusCard {
+      flex-basis: 46%;
+      height: 200px;
+      flex-grow: 1;
+
+      &Details {
+        label {
+          font-size: 2.6rem;
+        }
+      }
+    }
+    .custom-chart {
+      max-width: 420px !important;
+      // height: 251px !important;
+    }
+  }
+
+  @media (max-width: 1240px) {
+    &Data {
+      &Cards {
+        justify-content: space-between;
+      }
+      .statusCard {
+        flex-basis: 41.5%;
+        padding: 18px;
+        gap: 18px;
+        label {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &Title {
+      margin: 16px 0;
+      padding: 0;
+    }
+    &Data {
+      &Cards {
+        flex-direction: column;
+        width: 100%;
+      }
+      .statusCard {
+        padding: 16px;
+      }
+    }
+  }
+
+  @media (max-height: 662px) {
+    &Title {
+      padding: 15px 0;
+    }
+    &DataCards {
+      gap: 12px;
+    }
+    .statusCard {
+      height: 170px;
+    }
+    .transportationDataChartFilter {
+      margin-bottom: 27px;
+    }
+  }
+}

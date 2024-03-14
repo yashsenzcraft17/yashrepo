@@ -1,0 +1,59 @@
+@import "styles/variables.scss";
+
+.inputField {
+  @include d-flex();
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  // width: 100%;
+
+  &Label {
+    color: $color-grey-8;
+    @include font-reg(1.4rem);
+    line-height: 135%;
+    white-space: nowrap;
+  }
+
+  &Text {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid $color-white-10;
+    background: #fff;
+    color: $color-black-4;
+    @include font-reg(1.6rem);
+    line-height: 140%;
+
+    &:focus {
+      border-radius: 4px;
+      outline: 1px solid $color-blue-0;
+      border: 1px solid $color-blue-0;
+      background: var(--Neutral-N0, #fff);
+    }
+
+    &::placeholder {
+      color: $color-grey-11;
+      @include font-reg(1.6rem);
+      line-height: 140%;
+    }
+
+    /* Change the white to any color */
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px $color-white-0 inset !important;
+    }
+  }
+}
+
+.errorBorder {
+  border: 1px solid $color-red-1 !important;
+  outline: 1px solid $color-red-1 !important;
+}
+
+.disabledClass {
+  border-radius: 4px;
+  border: 1px solid var(--Stroke-Stroke-2, #f0f0f0);
+  background: #f4f4f4;
+}

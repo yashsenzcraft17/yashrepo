@@ -1,0 +1,42 @@
+@import "styles/variables.scss";
+
+.noData {
+  height: calc(100vh - 67px);
+  @include d-flex($jc: center);
+  &Section {
+    @include d-flex($jc: center);
+    flex-direction: column;
+    gap: 10px;
+    img {
+      max-width: 362px;
+    }
+    h3 {
+      color: $color-black-4;
+      @include font-bold($fs: 2.8rem);
+      line-height: 140%;
+    }
+    button {
+      @include font-semi-bold($fs: 1.6rem);
+      border-radius: 4px;
+      background-color: $color-blue-0;
+      padding: 10px 32px;
+      border: none;
+      width: fit-content;
+      margin-top: 6px;
+      cursor: pointer;
+      a {
+        color: $color-white-0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .noData {
+    &Section {
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+@import "styles/variables.scss";
+
+.dashboardHeader {
+  &Section {
+    @include d-flex($jc: flex-start);
+    flex-direction: column;
+    position: absolute !important;
+    right: 0;
+    top: 0;
+    outline: 1px solid $color-white-11;
+    border-radius: 12px;
+    z-index: 8;
+    &Btn {
+      @include d-flex($jc: flex-end);
+      width: 100%;
+      gap: 16px;
+      padding: 16px 18px;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      // border-top: 1px solid $color-grey-5;
+      background: linear-gradient(
+          to left,
+          $color-grey-5 82.7%,
+          $color-white-0 0%
+        )
+        top;
+      background-repeat: no-repeat;
+      background-size: 100% 1px;
+      background-color: $color-white-0;
+      button {
+        width: 120px;
+        &:first-child {
+          @include font-semi-bold($fs: 1.6rem);
+          line-height: 135%;
+          border: none;
+          color: $color-black-10;
+          justify-content: center;
+        }
+        &:nth-child(2) {
+          border-radius: 4px;
+          background: var(--primary-primary, $color-blue-0);
+          color: var(--background-white, $color-white-0);
+          width: 120px;
+          justify-content: center;
+          @include font-semi-bold($fs: 1.6rem);
+          line-height: 135%;
+        }
+      }
+    }
+  }
+
+  .rdrDateRangePickerWrapper {
+    .rdrDefinedRangesWrapper {
+      width: 100%;
+      // border-top: 1px solid var(--stroke-stroke-1, $color-white-11);
+      // border-left: 1px solid var(--stroke-stroke-1, $color-white-11);
+      // border-bottom: 1px solid var(--stroke-stroke-1, $color-white-11);
+      background: var(--background-light-blue, $color-white-12);
+      padding: 24px 10px;
+      border-radius: 12px 0 0 0;
+      // border-top-left-radius: 12px;
+    }
+    .rdrStaticRangeLabel {
+      padding: 6px !important;
+    }
+    .rdrStaticRange:hover .rdrStaticRangeLabel,
+    .rdrStaticRange:focus .rdrStaticRangeLabel {
+      background: transparent !important;
+    }
+    .rdrCalendarWrapper {
+      width: 100%;
+      border-top-right-radius: 12px;
+    }
+    .rdrStartEdge {
+      border-top-left-radius: 0px !important;
+      border-bottom-left-radius: 0px !important;
+      background-color: $color-blue-0;
+    }
+    .rdrStartEdge ~ span {
+      color: transparent !important;
+      border-radius: 0;
+      span {
+        color: $color-white-0 !important;
+      }
+    }
+    .rdrEndEdge ~ span {
+      color: transparent !important;
+      border-radius: 0;
+      span {
+        color: $color-white-0 !important;
+      }
+    }
+    .rdrInRange ~ span {
+      color: transparent !important;
+      border-radius: 0;
+      span {
+        color: $color-black-0 !important;
+      }
+    }
+    .rdrDayPassive {
+      .rdrDayNumber {
+        span {
+          opacity: 0.3;
+        }
+      }
+    }
+    .rdrDay {
+      border: none !important;
+    }
+    .rdrDayHovered {
+      span {
+        // border: 0 !important;
+      }
+    }
+    .rdrDefinedRangesWrapper {
+      button {
+        padding: 0 !important;
+        width: 118px !important;
+        @include font-reg($fs: 1.4rem);
+        line-height: 135%;
+        color: $color-black-10;
+        border: none !important;
+        background: var(--background-light-blue, $color-white-12);
+      }
+      .rdrStaticRangeSelected {
+        color: $color-black-10 !important;
+        background: $color-blue-2 !important;
+      }
+    }
+    .rdrDateDisplayWrapper {
+      background-color: transparent !important;
+      display: none !important;
+      span {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      input {
+        background: transparent !important;
+      }
+    }
+    .rdrPprevButton {
+      position: relative;
+      border: none !important;
+      &::after {
+        content: "";
+        background-image: url(../../assets/images/header/downArrow.svg);
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        background-color: $color-white-0;
+        transform: rotate(90deg);
+      }
+      &:hover {
+        background: transparent !important;
+      }
+    }
+    .rdrNextButton {
+      position: relative;
+      border: none !important;
+      &::after {
+        content: "";
+        background-image: url(../../assets/images/header/downArrow.svg);
+        position: absolute;
+        right: -2px;
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        background-color: $color-white-0;
+        transform: rotate(270deg);
+      }
+      &:hover {
+        background: transparent !important;
+      }
+    }
+    .rdrInputRanges {
+      display: none !important;
+    }
+    .rdrStaticRanges {
+      gap: 8px;
+    }
+
+    .rdrInRange,
+    .rdrDayEndOfWeek .rdrStartEdge {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+    .rdrEndEdge {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      background-color: $color-blue-0;
+    }
+    .rdrDayNumber {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 135%;
+    }
+    .rdrDayNumber span:after {
+      content: none;
+    }
+    // .rdrDayHovered {
+    //   background-color: red !important;
+    // }
+
+    .rdrDateDisplayItem {
+    }
+  }
+}

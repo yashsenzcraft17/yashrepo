@@ -1,0 +1,132 @@
+@import "styles/variables.scss";
+
+.fuelStops {
+  padding: 20px;
+  background-color: $color-white-0;
+  border: 1px solid $color-white-11;
+  border-radius: 4px;
+  max-width: 870px;
+  width: 100%;
+  transition: all 0.3s ease-in;
+  overflow: hidden;
+
+  &Title {
+    @include d-flex($jc: space-between);
+    position: relative;
+    gap: 20px;
+    transition: all 0.3s ease-in;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      background-color: $color-blue-4;
+      width: 4px;
+      left: -20px;
+      border-radius: 0px 4px 4px 0px;
+    }
+
+    &Main {
+      @include d-flex($jc: flex-start);
+      gap: 12px;
+      flex-basis: 50%;
+      h2 {
+        color: $color-black-4;
+        @include font-semi-bold($fs: 1.6rem);
+        line-height: 135%;
+      }
+    }
+    span {
+      color: $color-blue-0;
+      text-decoration-line: underline;
+      @include font-semi-bold($fs: 1.6rem);
+      line-height: 135%;
+      cursor: pointer;
+      width: 88px;
+      height: 44px;
+      position: relative;
+      p {
+        position: absolute;
+        top: 12px;
+        transition: all 0.3s ease;
+        text-decoration-line: underline;
+      }
+    }
+
+    .expandIcon {
+      display: none;
+    }
+  }
+
+  &Cards {
+    border-top: 1px solid $color-white-10;
+    padding-top: 15px;
+    margin-top: 20px;
+
+    &Parent {
+      // border-left: 2px dashed $color-blue-2;
+      @include d-flex($jc: flex-start);
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      padding-bottom: 16px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        border-left: 2px dashed $color-blue-2;
+        left: 8px;
+        width: 1px;
+        height: 100%;
+      }
+    }
+  }
+
+  &ViewAll {
+    color: $color-blue-0;
+    @include font-semi-bold($fs: 1.4rem);
+    line-height: 130%;
+    text-decoration-line: underline;
+    display: block;
+    text-align: center;
+  }
+}
+
+// media query
+@media (max-width: 768px) {
+  .fuelStops {
+    &Title {
+      &Main {
+        h2 {
+          font-size: 1.4rem;
+          line-height: 130%;
+        }
+      }
+      span {
+        display: none;
+      }
+      .expandIcon {
+        display: block;
+      }
+    }
+
+    &Cards {
+      &Parent {
+        &::before {
+          content: none;
+        }
+        .stationCard {
+          border-radius: 8px;
+          &::before {
+            content: none;
+          }
+          &Main {
+            margin-left: 0;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+}

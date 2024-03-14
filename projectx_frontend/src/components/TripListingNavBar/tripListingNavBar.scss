@@ -1,0 +1,125 @@
+@import "styles/variables.scss";
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.tripListNavBar {
+  &Search {
+    display: none;
+  }
+
+  &ListBox {
+    width: 100% !important;
+  }
+
+  &Title {
+    @include d-flex();
+    gap: 40px;
+    padding: 38px 0 16px;
+    border-bottom: 1px solid $color-grey-6;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-color: transparent;
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      bottom: -16px;
+    }
+  }
+
+  &Content {
+    @include d-flex(center);
+    gap: 8px;
+  }
+
+  &Data {
+    cursor: pointer;
+    color: $color-grey-4;
+    @include font-reg(1.6rem);
+    line-height: 140%;
+  }
+
+  .activeTab {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $color-blue-0;
+      position: absolute;
+      bottom: -16px;
+    }
+
+    .tripListNavBarData {
+      color: $color-black-10;
+      @include font-semi-bold(1.6rem);
+      line-height: 135%;
+    }
+
+    .tripListNavBarCount {
+      color: $color-blue-0;
+      @include font-semi-bold(1.2rem);
+      background: $color-blue-2;
+      border-radius: 4px;
+    }
+  }
+
+  &Count {
+    cursor: pointer;
+    @include font-semi-bold(1.2rem);
+    color: $color-grey-8;
+    line-height: 120%;
+    border-radius: 4px;
+    background: $color-white-11;
+    padding: 5px 8px;
+  }
+
+  @media (max-width: 992px) {
+    &Search {
+      display: block;
+      @include d-flex(space-between);
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    &Content {
+      padding: 0 16px;
+    }
+
+    &Title {
+      gap: 12px;
+      padding: 16px 0 8px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+
+    &Data {
+      @include font-reg(1.4rem);
+      white-space: nowrap;
+    }
+
+    .activeTab {
+      min-width: 120px;
+
+      &::after {
+        content: "";
+        display: block;
+        transition: all 3s ease;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: -8px;
+      }
+
+      .tripListNavBarData {
+        @include font-semi-bold(1.4rem);
+      }
+    }
+  }
+}

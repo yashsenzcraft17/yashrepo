@@ -1,0 +1,10 @@
+@import "styles/variables.scss";
+
+.tripListing {
+  background: $color-white-6;
+  padding: 22px 30px 24px 18px;
+
+  @media (max-width: 992px) {
+    padding: 16px 16px 24px 16px;
+  }
+}

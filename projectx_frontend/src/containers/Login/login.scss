@@ -1,0 +1,607 @@
+@import "/src/styles/variables.scss";
+
+// LoginForm
+.form {
+  background: #f4fafc;
+  @include d-flex(center);
+  height: 100dvh;
+
+  .otp-input {
+    &:first-of-type {
+      margin: 0 0.5rem 0 0 !important;
+    }
+  }
+
+  &ErrorMsg {
+    color: $color-red-0;
+    @include font-semi-bold(1.4rem);
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    margin-bottom: 5px;
+  }
+
+  &APIError {
+    @include font-reg(1.2rem);
+    color: $color-grey-9;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+  }
+
+  &SuccessMsg {
+    color: $color-green-0;
+    @include font-semi-bold(1.4rem);
+    line-height: 16px;
+    letter-spacing: 0.2px;
+
+    &SubMsg {
+      color: $color-grey-10;
+      @include font-reg(1.2rem);
+      line-height: 16px;
+      letter-spacing: 0.2px;
+    }
+  }
+
+  &Captcha {
+    height: 76px;
+    margin: 0 auto;
+  }
+
+  &Spinner {
+    width: 23.8px;
+    height: 23.8px;
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: #dbdcef;
+    border-right-color: white;
+    align-items: center;
+    display: block;
+    margin: 0 auto;
+    animation: spinner-d3wgkg 1s infinite linear;
+
+    @keyframes spinner-d3wgkg {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+  }
+
+  &Bar div:nth-child(2) {
+    height: 8px !important;
+    border-radius: 4px !important;
+  }
+
+  &Data {
+    border-radius: 16px;
+    background: #fff;
+    backdrop-filter: blur(2px);
+    @include d-flex();
+    align-items: flex-start;
+    gap: 110px;
+    min-height: 620px;
+  }
+
+  // &Image {
+  //   flex-basis: 50%;
+  //   position: relative;
+  //   width: 100%;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: flex-start;
+
+  //   &Para {
+  //     color: $color-grey-7;
+  //     font-family: Plus Jakarta Sans;
+  //     @include font-semi-bold(3.8rem);
+  //     line-height: 159%;
+  //     position: absolute;
+  //     max-width: 532px;
+
+  //     width: 100%;
+  //     bottom: 12px;
+  //     left: 0;
+  //     right: 0;
+  //     margin: 0 auto;
+  //   }
+
+  //   &Special {
+  //     color: $color-orange-0;
+  //     font-family: Plus Jakarta Sans;
+  //     @include font-bold(3.8rem);
+  //     line-height: 159%;
+  //   }
+  // }
+
+  &Field {
+    flex-basis: 29.7%;
+  }
+
+  .companyLogoContainer {
+    padding: 40px 0 0 0;
+    width: 200px;
+    // height: 50px;
+    margin: 0 auto 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &CompanyLogo {
+    // padding: 40px 0 0 0;
+
+    &Header {
+      color: $color-black-1;
+      @include font-bold(2rem);
+      margin-bottom: 12px;
+    }
+
+    // img {
+    //   margin: 0 0 20px 0;
+    // }
+  }
+
+  &Email,
+  &Password {
+    color: $color-grey-0;
+    @include font-semi-bold(1.4rem);
+    line-height: 140%;
+    width: 100%;
+    margin-bottom: 32px;
+    position: relative;
+
+    &ResetPwd {
+      margin-bottom: 0 !important;
+    }
+
+    &Confirm {
+      color: $color-grey-0 !important;
+    }
+
+    .formBar {
+      div {
+        height: 8px !important;
+        border-radius: 4px;
+      }
+    }
+
+    label {
+      color: $color-black-10;
+      @include font-semi-bold(1.4rem);
+      line-height: 140%;
+      position: relative;
+      display: block;
+    }
+  }
+
+  &AllField {
+    @include d-flex();
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  &MailIcon,
+  &PwdIcon {
+    border-radius: 4px;
+    border: 1px solid $color-white-10;
+    background: #fff;
+    padding: 10px 12px;
+    width: 100%;
+    margin-top: 4px;
+    position: relative;
+    height: 40px;
+    appearance: none;
+
+    &:focus {
+      border-radius: 4px;
+      outline: 1px solid $color-blue-0;
+      border: 1px solid $color-blue-0;
+      background: var(--Neutral-N0, #fff);
+    }
+
+    &::placeholder {
+      color: $color-grey-8;
+      @include font-reg(1.4rem);
+      line-height: 130%;
+    }
+
+    /* Change the white to any color */
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px $color-white-0 inset !important;
+    }
+  }
+
+  &PasswordImg {
+    position: absolute;
+    top: 36px;
+    right: 13px;
+    cursor: pointer;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+  }
+
+  &Button {
+    padding: 10px 12px;
+    border-radius: 4px;
+    width: 100%;
+    background: $color-blue-0;
+    border: none;
+    color: $color-white-0;
+    @include font-semi-bold(1.6rem);
+    opacity: 1;
+    cursor: pointer;
+    height: 42px;
+    margin-top: 24px;
+  }
+
+  &BlurButton {
+    opacity: 0.5;
+    cursor: auto;
+  }
+
+  &ResetPassword {
+    display: block;
+    margin: 0 auto;
+
+    span {
+      color: $color-black-10;
+      @include font-reg(1.4rem);
+      line-height: 135%;
+      @include d-flex(space-between);
+      gap: 6px;
+      margin: 24px auto 0;
+    }
+
+    &Link {
+      color: $color-blue-0;
+      @include font-semi-bold(1.4rem);
+      display: block;
+      line-height: 130%;
+      margin: 0 auto;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration-line: underline;
+      }
+    }
+  }
+
+  &Link {
+    display: block;
+    z-index: 999;
+    margin: 24px auto 0;
+  }
+
+  // UpdatePassword
+  &EmailPassword {
+    position: absolute;
+    top: 34px;
+    right: 13px;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+
+  // OTPError
+  &OTPError {
+    @include d-flex();
+    align-items: flex-start;
+    gap: 4px;
+  }
+  //   &Recaptcha {
+  //     iframe {
+  //       border-radius: 4px;
+  //       background: #f2f2f2;
+  //       padding: 10px 12px;
+  //     }
+  //   }
+
+  //   responsive
+  @media (max-width: 992px) {
+    &Email,
+    &Password {
+      margin-bottom: 16px;
+    }
+
+    &ResetPassword {
+      span {
+        margin-top: 8px;
+      }
+    }
+
+    &Field {
+      &Data {
+        padding: 16px;
+        border-radius: 16px 16px 0px 0px;
+        background: #fff;
+        box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.05);
+        width: 100%;
+      }
+    }
+
+    &AllField {
+      gap: 16px;
+    }
+
+    &Data {
+      flex-direction: column;
+      border-radius: 16px;
+      background: #fff;
+      align-items: center;
+      gap: 0;
+      min-height: 670px;
+      width: 100%;
+    }
+
+    &Responsive {
+      border-radius: 16px 16px 0px 0px;
+      background: #fff;
+      box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.05);
+      padding: 16px;
+      width: 100%;
+    }
+
+    &Button {
+      margin-top: 8px;
+    }
+    .companyLogoContainer {
+      margin: 0 auto 16px;
+      padding: 0 0 0;
+    }
+
+    &CompanyLogo {
+      padding: 0 0 0;
+
+      img {
+        display: block;
+        margin: 0 auto 16px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    background: none;
+    width: 100%;
+    display: block;
+  }
+
+  @media (max-width: 340px) {
+    .otp-input {
+      margin: 0 0.5rem !important;
+      width: 40px !important;
+      height: 40px !important;
+
+      &:first-of-type {
+        margin: 0 0.5rem 0 0 !important;
+      }
+
+      &:last-of-type {
+        margin: 0 0 0 0.5rem !important;
+      }
+    }
+  }
+}
+
+// verification
+.verification {
+  &Logo {
+    margin: 40px 0 0;
+  }
+
+  &FormData {
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 110px;
+  }
+
+  &Data {
+    h4 {
+      color: $color-black-0;
+      @include font-semi-bold(2rem);
+      margin: 0 0 7px;
+    }
+
+    &Content {
+      @include font-reg(1.4rem);
+      line-height: 135%;
+      letter-spacing: 0.2px;
+      max-width: 360px;
+      margin-bottom: 40px;
+      color: $color-grey-4;
+    }
+  }
+
+  //   responsive
+  @media (max-width: 992px) {
+    &Form {
+      top: 28%;
+      left: 48px;
+    }
+
+    &Logo {
+      // margin: 16px 0;
+      margin-top: 0;
+      margin-bottom: 16px;
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    &Data {
+      h4 {
+        @include font-semi-bold(1.6rem);
+        margin: 0px 0 4px;
+      }
+
+      &Content {
+        color: $color-black-10;
+        @include font-reg(1.2rem);
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+.otp-container {
+  @include d-flex();
+}
+
+.otpScreen {
+  @include d-flex();
+  gap: 0;
+
+  &EnterOTP {
+    &:focus-visible {
+      outline: 1px solid $color-blue-0;
+      border: 1px solid $color-blue-0;
+    }
+  }
+
+  &Content {
+    margin-bottom: 50px;
+  }
+
+  &Header {
+    color: $color-black-1;
+    @include font-semi-bold(1.4rem);
+    line-height: 140%;
+  }
+
+  .resendOtpContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 24px 0 0px;
+    width: 100%;
+  }
+
+  .resendOtpMessage {
+    color: #677787;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 140%;
+  }
+
+  .resendBtn {
+    color: #0098b3;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 140%;
+    cursor: pointer;
+  }
+
+  .resendDisabled {
+    color: #dbdbdb;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 140%;
+    cursor: default;
+  }
+}
+
+.passwordRules {
+  z-index: 999;
+
+  &Data {
+    z-index: 999;
+    position: absolute;
+    top: 150%;
+    left: -154px;
+    transform: translateY(-50%);
+    @include d-flex(flex-start);
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fff;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    gap: 10px;
+
+    &Text {
+      color: $color-grey-4;
+      @include font-reg(1.2rem);
+      line-height: 130%;
+    }
+
+    &Content {
+      @include d-flex();
+      gap: 4px;
+    }
+
+    &Img {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.container {
+  &Data {
+    // padding: 0 16px;
+    max-width: 1123px;
+    transition: all 0.5s ease-in;
+    margin: 0 auto;
+    min-height: 520px;
+  }
+}
+
+.error {
+  max-width: 100%;
+  margin-top: 4px;
+  position: absolute;
+  @include font-reg(1.2rem);
+  color: $color-red-0;
+  line-height: 130%;
+}
+
+.errorBorder {
+  border: 1px solid $color-red-0 !important;
+  outline: 1px solid $color-red-0 !important;
+}
+
+// responsive
+@media (max-width: 992px) {
+  .container {
+    &Data {
+      padding: 0;
+      width: 100%;
+      min-height: 0;
+      height: 100%;
+    }
+  }
+
+  .error {
+    max-width: 100%;
+    margin-top: 4px;
+    position: absolute;
+    @include font-reg(1.2rem);
+    color: $color-red-0;
+    line-height: 130%;
+  }
+
+  .otpScreen {
+    &Content {
+      max-width: 100%;
+      margin-bottom: 24px;
+    }
+  }
+
+  .passwordRules {
+    &Data {
+      top: 178%;
+      left: 0px;
+      z-index: 2;
+    }
+  }
+}
+
+.Toastify__toast-body > div:last-child {
+  @include font-reg(1.2rem);
+  color: #546479;
+}

@@ -1,0 +1,68 @@
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+  border-radius: 5px;
+
+  &Sidebar {
+    width: 15%;
+    height: 28px;
+    margin-left: 10px;
+  }
+}
+
+.tripsColor {
+  animation: skeleton-loading-color 1s linear infinite alternate;
+}
+.fuelColor {
+  animation: skeleton-loading-fuel 1s linear infinite alternate;
+}
+.completedColor {
+  animation: skeleton-loading-completed 1s linear infinite alternate;
+}
+.ongoingColor {
+  animation: skeleton-loading-ongoing 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsla(200, 33%, 95%, 1);
+  }
+  100% {
+    background-color: hsla(200, 33%, 90%, 1);
+  }
+}
+
+@keyframes skeleton-loading-color {
+  0% {
+    background-color: rgb(242, 150, 245);
+  }
+  100% {
+    background-color: rgb(227, 105, 231);
+  }
+}
+
+@keyframes skeleton-loading-fuel {
+  0% {
+    background-color: rgb(140, 164, 244);
+  }
+  100% {
+    background-color: rgb(130, 166, 237);
+  }
+}
+
+@keyframes skeleton-loading-completed {
+  0% {
+    background-color: rgb(84, 169, 238);
+  }
+  100% {
+    background-color: rgb(79, 168, 238);
+  }
+}
+
+@keyframes skeleton-loading-ongoing {
+  0% {
+    background-color: hsl(338, 87%, 62%);
+  }
+  100% {
+    background-color: hsl(338, 87%, 70%);
+  }
+}

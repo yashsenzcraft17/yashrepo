@@ -1,0 +1,157 @@
+@import "styles/variables.scss";
+
+.tripListMobileTable {
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid $color-white-11;
+  background: $color-white-0;
+  // margin-top: 16px;
+  @include d-flex(space-between);
+  align-items: normal;
+  flex-direction: column;
+  gap: 16px;
+
+  &Overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $color-white-0;
+    padding: 16px;
+    width: 100%;
+    button {
+      width: 100%;
+      color: $color-white-0;
+      background-color: $color-blue-0;
+      border-radius: 4px;
+      cursor: pointer;
+      @include d-flex(center);
+      gap: 8px;
+      border: none;
+      padding: 10px 12px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 135%;
+    }
+  }
+
+  &Data {
+    border-radius: 4px;
+    border: 1px solid $color-white-11;
+    background: $color-white-0;
+    padding: 16px;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &Content {
+      @include d-flex(space-between);
+      margin-bottom: 26px;
+    }
+
+    &Route {
+      h3 {
+        color: $color-grey-4;
+        @include font-reg(1.2rem);
+        line-height: 130%;
+        margin-bottom: 4px;
+      }
+
+      p {
+        color: $color-black-10;
+        @include font-semi-bold(1.4rem);
+        line-height: 130%;
+      }
+    }
+
+    &Progress {
+      @include d-flex();
+      gap: 6px;
+      border-radius: 4px;
+      background: $color-white-14;
+      padding: 4px 6px;
+
+      p {
+        color: $color-blue-6;
+        @include font-reg(1.2rem);
+        line-height: 130%;
+      }
+    }
+  }
+
+  &Distance {
+    @include d-flex(center);
+    align-items: center;
+    margin-bottom: 4px;
+    position: relative;
+
+    &Kilometer {
+      color: $color-black-10;
+      @include font-reg(1.2rem);
+      line-height: 130%;
+      border-radius: 2px;
+      background: $color-blue-7;
+      padding: 2px 8px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      text-align: center;
+      width: fit-content;
+    }
+  }
+
+  &Country {
+    @include d-flex(space-between);
+    margin-bottom: 16px;
+
+    &StartDate {
+      @include d-flex();
+      flex-direction: column;
+    }
+
+    &EndDate {
+      @include d-flex();
+      flex-direction: column;
+    }
+
+    h5 {
+      color: var(--text-grey-1, #171b1c);
+
+      /* Heading/H3 */
+      font-family: Open Sans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 130%; /* 18.2px */
+      margin-bottom: 4px;
+    }
+
+    p {
+      color: var(--text-grey-3, #677787);
+
+      /* Body/Text 3 */
+      font-family: Open Sans;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%; /* 15.6px */
+    }
+  }
+
+  &Button {
+    border-radius: 4px;
+    border: 1px solid $color-blue-0;
+    background: $color-white-0;
+    padding: 8px 12px;
+    color: $color-blue-0;
+    @include font-semi-bold(1.2rem);
+    line-height: 135%;
+    width: 100%;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,79 @@
+@import "styles/variables.scss";
+
+.leadDashboard {
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  background-color: $color-white-6;
+  &Container {
+    padding: 7px 0 21px;
+    @include d-flex($jc: space-between);
+    position: relative;
+    h2 {
+      line-height: 140%;
+      @include font-semi-bold($fs: 2rem);
+      color: $color-black-4;
+    }
+  }
+  &Card {
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    // flex-wrap: wrap;
+    margin: 18px 0 24px 0;
+    // max-width: 1190px;
+
+    .statusCard {
+      // min-width: 276px;
+      flex-basis: 23.9%;
+
+      @media (max-width: 768px) {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+.leadChartContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1150px) {
+  .leadDashboard {
+    padding: 24px 16px;
+    .dashboardRouteTable {
+      flex-direction: column;
+    }
+    &Card {
+      flex-direction: column;
+    }
+    &TableRoute {
+      width: 100%;
+      max-width: 100% !important;
+      .loadChart {
+        width: 100%;
+        max-width: 100%;
+      }
+      .reeferChart {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .leadDashboard {
+    .leadChartContainer {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .chartCard {
+      width: 100%;
+    }
+  }
+}

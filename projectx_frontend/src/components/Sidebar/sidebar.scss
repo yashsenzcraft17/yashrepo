@@ -1,0 +1,315 @@
+@import "styles/variables.scss";
+
+.sidebar {
+  height: calc(100vh - 66px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 67px;
+  border-right: 1px solid $color-white-11;
+  background: $color-white-3;
+  // box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.05);
+  z-index: 9;
+
+  &Menu {
+    display: flex;
+    flex-direction: column;
+    width: 204px;
+    transition: all 0.5s ease;
+    position: relative;
+    flex-grow: 1;
+    gap: 4px;
+    padding-top: 8px;
+    &::after {
+      content: "";
+      background: url(../../assets/images/sidebar/sidebarBg.png);
+      position: absolute;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      display: block;
+      height: 100%;
+      width: 100%;
+      bottom: 0;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .menuCollapsed {
+      height: 44px !important;
+      span {
+        max-width: 44px;
+        margin: 0 auto;
+      }
+    }
+
+    &Main {
+      span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        p {
+          flex-basis: 66%;
+        }
+      }
+    }
+
+    li {
+      color: $color-black-5;
+      @include font-reg($fs: 1.4rem);
+      font-style: normal;
+      line-height: 130%;
+      list-style-type: none;
+      cursor: pointer;
+      margin: 0 8px;
+
+      .selectedMenu {
+        background-color: $color-blue-2;
+        font-weight: 600;
+        border-radius: 4px;
+
+        // path {
+        //   fill: $color-blue-0;
+        //   stroke: $color-blue-0;
+        // }
+      }
+
+      span {
+        padding: 12px;
+        border-radius: 4px;
+        svg {
+          min-width: 22px;
+        }
+        &:hover {
+          $color-blue-2: $color-blue-2;
+          background-color: $color-blue-2;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    .subMenuParent {
+      overflow: hidden;
+      position: relative;
+      .subMenuParentActive {
+        $color-blue-2: $color-blue-2;
+        background-color: $color-blue-2;
+        font-weight: 600;
+        path {
+          fill: $color-blue-0;
+          stroke: $color-blue-0;
+        }
+      }
+      ul {
+        margin-left: 10px;
+        li {
+          color: $color-black-5;
+          @include font-reg($fs: 1.4rem);
+          font-style: normal;
+          line-height: 130%;
+          list-style-type: none;
+          cursor: pointer;
+          padding: 12px;
+          position: relative;
+
+          &:hover {
+            font-weight: 600;
+            .subMenuChild {
+              font-weight: 400;
+            }
+          }
+        }
+        .subMenuSelected {
+          font-weight: 600;
+          @include d-flex($jc: flex-start);
+          gap: 12px;
+          position: relative;
+          img {
+            position: absolute;
+            left: 2px;
+          }
+        }
+        .subMenuChildParent {
+          label {
+            @include d-flex($jc: space-between);
+            gap: 10px;
+            cursor: pointer;
+            position: relative;
+            white-space: nowrap;
+            span {
+              padding: 0;
+              border-radius: 0;
+              display: flex;
+              &:hover {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+        .subMenuChildPop {
+          @include d-flex($jc: space-between);
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0 0 0 25px;
+          &Item {
+            position: relative;
+            width: 100%;
+          }
+          p {
+            @include font-reg($fs: 1.4rem);
+            color: $color-black-10;
+            line-height: 135%;
+            padding: 8px;
+            cursor: pointer;
+            &:hover {
+              font-weight: 600 !important;
+            }
+          }
+        }
+      }
+      &Logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+        cursor: pointer;
+        svg {
+          min-width: 22px;
+          display: flex;
+        }
+        span {
+          display: flex;
+        }
+        p {
+          flex-basis: 66%;
+        }
+      }
+
+      .subMenuItems {
+        position: absolute;
+        right: -170px;
+        top: 0;
+        display: none;
+        // background-color: $color-white-0;
+        background: $color-white-3;
+        box-shadow: 0px 0px 3.847px 0px $color-black-9;
+        border-radius: 4px;
+        margin-left: 0;
+        width: 170px;
+        span {
+          color: $color-black-8;
+          @include font-semi-bold($fs: 1.4rem);
+          line-height: 130%;
+          padding: 12px;
+          border-bottom: 1px solid $color-white-6;
+          position: relative;
+          // margin: 0 !important;
+          max-width: 100% !important;
+          cursor: default;
+          margin-bottom: 5px !important;
+          &:hover {
+            background-color: transparent !important;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            background-image: url(../../assets/images/sidebar/popupArrow.svg);
+            left: -5px;
+            width: 6px;
+            height: 6px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+          }
+        }
+
+        a:last-child {
+          li {
+            margin: 0 12px 12px 12px;
+          }
+        }
+        li {
+          position: relative;
+          margin: 0 12px 0 12px;
+          padding: 8px 0 8px 16px;
+          img {
+            position: absolute;
+            left: 0;
+            top: 16px;
+          }
+
+          &:hover {
+            background-color: #c3ecf4;
+            border-radius: 4px;
+          }
+        }
+      }
+      &:hover {
+        .subMenuItems {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .collapseFalseHoverTitle {
+    &:hover {
+      background-color: transparent !important;
+      font-weight: inherit !important;
+    }
+  }
+
+  &Collapse {
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid $color-grey-2;
+    background: $color-white-4;
+    color: $color-black-7;
+    @include font-semi-bold($fs: 1.4rem);
+    span {
+      display: flex;
+    }
+    p {
+      transition: all 0.5s ease;
+      overflow: hidden;
+    }
+  }
+
+  .subMenuSelectedIcon {
+    position: absolute;
+    left: 2px;
+    top: 8px;
+    &Active {
+      svg {
+        circle {
+          fill: $color-blue-0;
+        }
+      }
+    }
+  }
+}
+
+// media query
+@media (max-width: 1150px) {
+  .sidebar {
+    // left: -100%;
+    background-color: $color-white-0;
+    background-size: 100% 100%;
+    background-position: bottom;
+    height: 100%;
+    top: 68px;
+    left: 0;
+    transition: all 0.2s ease;
+    &Collapse {
+      display: none;
+    }
+
+    &Menu {
+      .subMenuParent .subMenuItems {
+        display: none !important;
+      }
+    }
+  }
+}

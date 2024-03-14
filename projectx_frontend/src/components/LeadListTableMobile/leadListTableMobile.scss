@@ -1,0 +1,62 @@
+@import "styles/variables.scss";
+
+.leadListMobileTableData {
+  border: 1px solid $color-white-13;
+  padding: 16px;
+  &Content {
+    @include d-flex($jc: space-between);
+    border-radius: 2px;
+    background: $color-white-0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $color-white-12;
+  }
+  &Route {
+    h3 {
+      color: $color-black-10;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 130%; /* 18.2px */
+    }
+  }
+  &Status {
+    @include d-flex($jc: flex-start);
+    gap: 12px;
+  }
+  &Cards {
+    @include d-flex($jc: space-between);
+    flex-wrap: wrap;
+    gap: 12px 0;
+    padding: 12px 0 16px 0;
+    .leadListCard {
+      flex-basis: 50%;
+      p {
+        color: #999;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+      }
+      span {
+        color: $color-black-10;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%;
+      }
+    }
+  }
+  button {
+    color: $color-blue-0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 135%;
+    border-radius: 4px;
+    border: 1px solid $color-blue-0;
+    background: $color-white-0;
+    padding: 8px 12px;
+    width: 100%;
+    cursor: pointer;
+  }
+}

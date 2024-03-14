@@ -1,0 +1,40 @@
+.sliderRange {
+  .horizontal-slider {
+    padding-bottom: 20px;
+    margin: 0 40px 0 25px;
+  }
+  .thumb {
+    background-color: #fff;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #0098b3;
+    border-radius: 50%;
+    top: -4px;
+    span {
+      position: absolute;
+      color: var(--text-grey-2, #3a4243);
+      /* Body/Text 2 */
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 135%;
+      bottom: -25px;
+      left: -10px;
+    }
+  }
+  .track {
+    color: blue;
+    height: 6px;
+    border-radius: 4px;
+  }
+  .track-0 {
+    background-color: #c3ecf4;
+  }
+  .track-1 {
+    background-color: #0098b3;
+  }
+  .track-2 {
+    background-color: #c3ecf4;
+  }
+}

@@ -1,0 +1,52 @@
+@import "styles/variables.scss";
+
+.companyInfo {
+  border-top: 1px solid $color-white-11;
+  padding-top: 24px;
+
+  &Fields {
+    @include d-flex();
+    flex-wrap: wrap;
+    row-gap: 44px;
+    padding-top: 44px;
+    column-gap: 16px;
+
+    > div {
+      width: calc(32.9% - 8px);
+    }
+  }
+
+  &TwoFields {
+    @include d-flex();
+    flex-wrap: wrap;
+    // padding-top: 24px;
+    column-gap: 16px;
+
+    > div {
+      width: calc(49.3% - 8px);
+    }
+  }
+
+  // responsive
+  @media (max-width: 768px) {
+    padding-top: 16px;
+
+    &Fields {
+      padding-top: 32px;
+      row-gap: 32px;
+
+      > div {
+        width: 100%;
+      }
+    }
+
+    &TwoFields {
+      padding-top: 0;
+      gap: 32px;
+
+      > div {
+        width: 100%;
+      }
+    }
+  }
+}

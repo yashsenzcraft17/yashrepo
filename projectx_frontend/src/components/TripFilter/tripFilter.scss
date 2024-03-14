@@ -1,0 +1,280 @@
+@import "styles/variables.scss";
+
+.tripFilter {
+  position: fixed;
+  right: 0;
+  top: 67px;
+  padding: 16px;
+  height: calc(100vh - 67px);
+  background-color: $color-white-0;
+  border-radius: 4px;
+  box-shadow: 0px 0px 20px 0px $color-black-12;
+  width: 360px;
+  transition: all 0.3s ease;
+  @include d-flex($jc: space-between);
+  flex-direction: column;
+
+  .rdrMonth {
+    width: auto;
+  }
+
+  &Title {
+    @include d-flex($jc: space-between);
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color-grey-6;
+    h4 {
+      color: $color-black-4;
+      @include font-semi-bold($fs: 1.6rem);
+      line-height: 135%;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+
+  &Section {
+    height: 360px;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &Option {
+      padding: 20px 0;
+      border-bottom: 1px solid $color-grey-6;
+
+      .filterTitle {
+        cursor: pointer;
+        @include d-flex($jc: space-between);
+
+        p {
+          color: $color-black-10;
+          @include font-reg($fs: 1.6rem);
+          line-height: 140%;
+          @include d-flex($jc: space-between);
+          gap: 12px;
+          span {
+            color: $color-blue-0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: $color-blue-2;
+            @include font-semi-bold($fs: 1rem);
+            line-height: 120%;
+          }
+        }
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .filterChild {
+        overflow: hidden;
+      }
+    }
+  }
+
+  &Buttons {
+    @include d-flex($jc: space-between);
+    gap: 16px;
+    padding-top: 20px;
+    button {
+      @include font-reg($fs: 1.4rem);
+      line-height: 135%;
+      width: 130px;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      &:first-child {
+        color: $color-black-4;
+        background-color: $color-white-0;
+        border: 1px solid $color-blue-0;
+      }
+      &:last-child {
+        color: $color-white-0;
+        background-color: $color-blue-0;
+        border: 1px solid $color-blue-0;
+      }
+    }
+  }
+  .tripDate {
+    @include d-flex($jc: space-between);
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    &Section {
+      width: 100%;
+      @include d-flex($jc: space-between);
+      padding: 10px 20px;
+      border-radius: 4px;
+      border: 1px solid $color-white-11;
+      background: $color-white-0;
+
+      p {
+        color: $color-grey-4;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 135%;
+        @include d-flex($jc: space-between);
+        gap: 8px;
+        label {
+          background-color: $color-grey-8;
+          height: 1px;
+          width: 8px;
+          display: block;
+        }
+      }
+    }
+    &Btn {
+      @include d-flex($jc: flex-end);
+      width: 100%;
+      gap: 16px;
+      padding: 10px;
+      position: absolute;
+      bottom: -5px;
+      button {
+        cursor: pointer;
+        &:first-child {
+          border-radius: 4px;
+          border: none;
+          background: transparent;
+          @include font-semi-bold($fs: 1.6rem);
+          line-height: 120%;
+          color: $color-grey-4;
+          text-decoration: underline;
+        }
+        &:last-child {
+          color: $color-white-0;
+          padding: 8px 2px;
+          width: 93px;
+          line-height: 120%;
+          @include font-semi-bold($fs: 1.4rem);
+          border-radius: 4px;
+          border: 1px solid $color-blue-0;
+          background: $color-blue-0;
+        }
+      }
+    }
+  }
+  .tripStart {
+    @include d-flex($jc: space-between);
+    padding: 10px;
+    border: 1px solid $color-white-11;
+    border-radius: 4px;
+    background-color: $color-white-0;
+    cursor: pointer;
+    flex-direction: column;
+    width: 100%;
+    height: 380px;
+    p {
+      color: $color-grey-4;
+      @include font-reg($fs: 1.4rem);
+      line-height: 135%;
+    }
+
+    .rdrCalendarWrapper {
+      width: 100%;
+      .rdrNextButton,
+      .rdrPprevButton {
+        position: relative;
+        border: none;
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url(../../assets/images/header/downArrow.svg);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          width: 24px;
+          height: 24px;
+          background-color: $color-white-0;
+          transform: rotate(270deg);
+          top: 0;
+          left: 0;
+        }
+      }
+      .rdrDay {
+        border: none;
+      }
+      .rdrDateDisplayWrapper {
+        background-color: transparent !important;
+      }
+      .rdrPprevButton {
+        &::after {
+          transform: rotate(90deg);
+          left: 0;
+        }
+      }
+      .rdrMonth {
+        width: 100%;
+      }
+      .rdrMonthPicker,
+      .rdrYearPicker {
+        flex-basis: 50%;
+      }
+      .rdrInRange,
+      .rdrDayEndOfWeek .rdrStartEdge {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        background-color: #c3ecf4;
+      }
+      .rdrEndEdge {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        background-color: $color-blue-0;
+      }
+      .rdrStartEdge {
+        background-color: $color-blue-0 !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+      .rdrStartEdge ~ span {
+        color: transparent !important;
+        border-radius: 0;
+        span {
+          color: $color-white-0 !important;
+        }
+      }
+      .rdrEndEdge ~ span {
+        color: transparent !important;
+        border-radius: 0;
+        span {
+          color: $color-white-0 !important;
+        }
+      }
+      .rdrInRange ~ span {
+        color: transparent !important;
+        border-radius: 0;
+        span {
+          color: $color-black-0 !important;
+        }
+      }
+      .rdrDayNumber span:after {
+        content: none;
+      }
+    }
+  }
+}
+
+.rdrMonthAndYearWrapper {
+  justify-content: none !important;
+}
+
+// media query
+@media (max-width: 768px) {
+  .tripFilter {
+    width: 100%;
+    // height: 100%;
+    &Section {
+      height: 470px;
+    }
+  }
+}
+
+@media (min-height: 800px) {
+  .tripFilter {
+    &Section {
+      height: 600px;
+    }
+  }
+}

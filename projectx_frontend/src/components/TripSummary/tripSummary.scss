@@ -1,0 +1,517 @@
+@import "styles/variables.scss";
+
+.tripSummary {
+  padding: 20px;
+  background-color: $color-white-0;
+  border: 1px solid $color-white-11;
+  border-radius: 4px;
+  max-width: 870px;
+
+  &Title {
+    @include d-flex($jc: space-between);
+    position: relative;
+    gap: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      background-color: $color-violet-0;
+      width: 4px;
+      left: -20px;
+      border-radius: 0px 4px 4px 0px;
+    }
+
+    &Main {
+      @include d-flex($jc: flex-start);
+      gap: 12px;
+      flex-basis: 50%;
+      h2 {
+        color: $color-black-4;
+        @include font-semi-bold($fs: 1.6rem);
+        line-height: 135%;
+      }
+    }
+
+    &Details {
+      @include d-flex($jc: space-between);
+      // flex-basis: 50%;
+      &Phn {
+        display: none;
+      }
+    }
+
+    &Distance {
+      @include d-flex($jc: flex-start);
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      position: absolute;
+      left: calc(50% - 35px);
+      top: 9px;
+
+      p {
+        color: $color-grey-4;
+        @include font-reg($fs: 1.2rem);
+        line-height: 130%;
+      }
+      span {
+        @include font-semi-bold($fs: 1.4rem);
+        line-height: 130%;
+        color: $color-green-0;
+
+        label {
+          color: $color-black-10;
+          @include font-semi-bold($fs: 1.4rem);
+          padding-left: 4px;
+        }
+      }
+    }
+
+    &TripId {
+      @include d-flex($jc: flex-start);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      p {
+        color: $color-grey-4;
+        @include font-reg($fs: 1.2rem);
+        line-height: 130%;
+      }
+      span {
+        @include font-semi-bold($fs: 1.6rem);
+        line-height: 135%;
+        color: $color-black-10;
+      }
+    }
+
+    &Status {
+      @include font-reg($fs: 1.2rem);
+      line-height: 130%;
+      color: $color-green-0;
+      padding: 4px 6px 4px 20px;
+      background-color: $color-green-1;
+      border-radius: 4px;
+      position: relative;
+      &Circle {
+        content: "";
+        position: absolute;
+        left: 6px;
+        width: 8px;
+        height: 8px;
+        background-color: $color-green-0;
+        border-radius: 50px;
+        top: 8px;
+      }
+    }
+  }
+
+  &Details {
+    border-top: 1px solid $color-white-10;
+    padding-top: 15px;
+    margin-top: 20px;
+    @include d-flex($jc: space-between);
+    gap: 20px;
+  }
+
+  &Trip {
+    @include d-flex($jc: space-between);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex-basis: 50%;
+
+    &Layer {
+      // width: 100%;
+      width: 415px;
+      padding: 16px;
+      border-radius: 4px;
+      background-color: $color-white-12;
+      min-height: 80px;
+
+      .routePhn {
+        display: none;
+      }
+    }
+
+    &StartEnd {
+      @include d-flex($jc: space-between);
+      gap: 12px;
+      width: 100%;
+    }
+
+    &Start {
+      span {
+        color: $color-blue-0;
+        @include font-semi-bold($fs: 1.4rem);
+        line-height: 130%;
+      }
+      p {
+        color: $color-grey-4;
+        @include font-reg($fs: 1.4rem);
+        line-height: 135%;
+        padding-top: 4px;
+        white-space: nowrap;
+      }
+    }
+
+    &Route {
+      position: relative;
+      display: flex;
+      top: 0;
+      width: 100%;
+      margin: 0 12px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url(../../assets/images/TripSummary/routeCircle.svg);
+        left: -15px;
+        width: 13px;
+        height: 15px;
+        background-size: 100%;
+        top: -8px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url(../../assets/images/TripSummary/routeCircle.svg);
+        right: -15px;
+        width: 13px;
+        height: 15px;
+        background-size: 100%;
+        top: -8px;
+      }
+
+      .tripSummaryTripRouteLine,
+      .tripSummaryTripDottedLine {
+      }
+
+      .tripSummaryTripRouteLine {
+        border-top: 2px solid #0098b3;
+        // flex-basis: 50%;
+      }
+
+      .tripSummaryTripRouteDottedLine {
+        border-top: 2px dashed #0098b3;
+        // flex-basis: 50%;
+      }
+
+      .truckIcon {
+        position: absolute;
+        // top: 50%;
+        bottom: 0;
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+
+    &End {
+      span {
+        color: $color-blue-0;
+        @include font-semi-bold($fs: 1.4rem);
+        line-height: 130%;
+      }
+      p {
+        color: $color-grey-4;
+        @include font-reg($fs: 1.4rem);
+        line-height: 135%;
+        padding-top: 4px;
+        white-space: nowrap;
+      }
+    }
+    &Description {
+      background-color: $color-white-10;
+      padding: 16px;
+      border-radius: 4px;
+      // height: 140px;
+      width: 100%;
+
+      &Data {
+        margin-bottom: 8px;
+
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+
+      span {
+        color: $color-grey-4;
+        @include font-reg($fs: 1.2rem);
+        line-height: 130%;
+      }
+      p {
+        color: $color-black-10;
+        @include font-semi-bold($fs: 1.2rem);
+        line-height: 130%;
+        padding-top: 4px;
+      }
+    }
+  }
+
+  &Vehicle {
+    flex-basis: 50%;
+    &Load {
+      @include d-flex($jc: space-between);
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 28px 0;
+      &Details {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+    &Details {
+      flex-basis: 25%;
+    }
+    p {
+      color: $color-grey-4;
+      @include font-reg($fs: 1.2rem);
+      line-height: 130%;
+      margin-bottom: 4px;
+    }
+    span {
+      color: $color-black-10;
+      @include font-semi-bold($fs: 1.4rem);
+      line-height: 130%;
+    }
+  }
+
+  &MobileSection {
+    margin-top: 16px;
+
+    h3 {
+      color: #677787;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 130%;
+      margin-bottom: 6px;
+    }
+  }
+
+  &MobileMap {
+    // max-width: 296px;
+    height: 182px;
+  }
+}
+
+// media query
+@media (max-width: 768px) {
+  .tripSummary {
+    &Vehicle {
+      P {
+        margin-bottom: 4px;
+      }
+    }
+
+    &Title {
+      &Main {
+        h2 {
+          font-size: 1.4rem;
+          line-height: 130%;
+        }
+      }
+    }
+    &Trip {
+      gap: 16px;
+      width: 100%;
+
+      &Layer {
+        width: 100%;
+      }
+
+      .routePhn {
+        position: relative;
+        display: none;
+        top: 20px;
+        width: 264px;
+        left: calc(50% - 132px);
+
+        &::before {
+          content: "";
+          position: absolute;
+          background-image: url(../../assets/images/TripSummary/routeCircle.svg);
+          left: -15px;
+          width: 13px;
+          height: 15px;
+          background-size: 100%;
+          top: -8px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url(../../assets/images/TripSummary/routeCircle.svg);
+          right: -15px;
+          width: 13px;
+          height: 15px;
+          background-size: 100%;
+          top: -8px;
+        }
+
+        .tripSummaryTripRouteLine {
+          border-top: 2px solid #0098b3;
+          // flex-basis: 50%;
+        }
+
+        .tripSummaryTripRouteDottedLine {
+          border-top: 2px dashed #0098b3;
+          // flex-basis: 50%;
+        }
+
+        .truckIcon {
+          position: absolute;
+          // top: 50%;
+          bottom: 0;
+          left: 0;
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &TitleDetails {
+      justify-content: flex-end;
+      &Phn {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 16px;
+        div {
+          // flex-basis: 50%;
+          @include d-flex($jc: space-between);
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 4px;
+          p {
+            color: $color-grey-4;
+            @include font-reg($fs: 1.2rem);
+            line-height: 130%;
+          }
+          span {
+            @include font-semi-bold($fs: 1.4rem);
+            line-height: 130%;
+            color: $color-black-10;
+          }
+        }
+      }
+    }
+    &TripRoute {
+      // display: none;
+    }
+    // &TitleDistance {
+    //   display: none;
+    // }
+    &TitleTripId {
+      display: none;
+    }
+    &Details {
+      flex-direction: column;
+      margin-top: 16px;
+      gap: 16px;
+    }
+
+    &TripStartEnd {
+      position: relative;
+    }
+    &TripStart {
+      @include d-flex();
+      align-items: center;
+      flex-direction: column;
+
+      span {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
+    &TripEnd {
+      @include d-flex();
+      align-items: center;
+      flex-direction: column;
+
+      span {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
+    &TripDescription {
+      p {
+        font-size: 1.2rem;
+        padding-top: 6px;
+        line-height: 160%;
+      }
+    }
+
+    &VehicleLoad {
+      gap: 16px 0;
+    }
+  }
+}
+
+// @media (max-width: 560px) {
+//   .tripSummary {
+//     &Trip {
+//       .routePhn {
+//         position: relative;
+//         display: flex;
+//         top: 20px;
+//         width: 100%;
+//         left: 0;
+//         right: 0;
+
+//         &::before {
+//           content: "";
+//           position: absolute;
+//           background-image: url(../../assets/images/TripSummary/routeCircle.svg);
+//           left: -15px;
+//           width: 13px;
+//           height: 15px;
+//           background-size: 100%;
+//           top: -8px;
+//         }
+
+//         &::after {
+//           content: "";
+//           position: absolute;
+//           background-image: url(../../assets/images/TripSummary/routeCircle.svg);
+//           right: -15px;
+//           width: 13px;
+//           height: 15px;
+//           background-size: 100%;
+//           top: -8px;
+//         }
+
+//         .tripSummaryTripRouteLine {
+//           border-top: 2px solid #0098b3;
+//           // flex-basis: 50%;
+//         }
+
+//         .tripSummaryTripRouteDottedLine {
+//           border-top: 2px dashed #0098b3;
+//           // flex-basis: 50%;
+//         }
+
+//         .truckIcon {
+//           position: absolute;
+//           // top: 50%;
+//           bottom: 0;
+//           left: 0;
+//           transform: translateX(0);
+//         }
+//       }
+//     }
+//   }
+// }
+
+.truckIcon {
+  position: relative;
+  transition: left 1s ease-in-out; /* You can adjust the duration and easing function */
+}
