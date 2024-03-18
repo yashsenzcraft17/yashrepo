@@ -2,6 +2,7 @@ import git
 
 def push_testing_to_staging(src_branch, dest_branch):
     repo = git.Repo('.')
+    # addding git repo manually
 
     # Push changes from testing to staging with force
     try:
@@ -12,4 +13,5 @@ def push_testing_to_staging(src_branch, dest_branch):
 
 if __name__ == "__main__":
     # Replace 'testing', 'staging' with your branch names
+
     push_testing_to_staging('testing', 'dev')
